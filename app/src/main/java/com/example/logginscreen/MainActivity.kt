@@ -18,8 +18,13 @@ class MainActivity : AppCompatActivity() {
         val username = sharedPreferences.getString("UserName", "")
         val password = sharedPreferences.getString("Password", "")
         if (username != null && password != null) {
-            val intent = Intent(this, LocationPermissions::class.java).apply {}
-            startActivity(intent)
+            if(sharedPreferences.getBoolean("LocationScreen", true)){
+                val intent = Intent(this, LocationPermissions::class.java).apply {}
+                startActivity(intent)
+            }else{
+                val intent = Intent(this, LocationPermissionsDenied::class.java).apply {}
+                startActivity(intent)
+            }
         }
 
         val logInButton: Button = findViewById(R.id.button)
@@ -42,9 +47,11 @@ class MainActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putString("UserName", userText)
             editor.putString("Password", passwordText)
+            editor.putBoolean("LocationScreen", true)
             editor.apply()
             val intent = Intent(this, LocationPermissions::class.java).apply {}
             startActivity(intent)
+
         }
     }
 }

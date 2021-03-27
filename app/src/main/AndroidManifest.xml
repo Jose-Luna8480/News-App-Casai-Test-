@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LogginScreen">
-        <activity android:name=".LocationPermissions"></activity>
+        <activity android:name=".NewsFeed"></activity>
+        <activity
+            android:name=".LocationPermissionsDenied"
+            android:theme="@style/LoginPage" />
+        <activity
+            android:name=".LocationPermissions"
+            android:theme="@style/LoginPage" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/LoginPage"

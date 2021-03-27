@@ -28,7 +28,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/ic_location_on_24px" />
+            app:srcCompat="@drawable/ic_warning" />
 
         <TextView
             android:layout_width="match_parent"
@@ -36,42 +36,27 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:text='Allow "My News Feed" to access the location of this device?'
+            android:text='Warning: You cannot continue if you do not accept location permissions for "My News Feed"'
             android:textColor="@color/colorThree"
-            android:textSize="20dp"
+            android:textSize="14dp"
             android:justificationMode="inter_word"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="false"
+            android:background="@drawable/button_background2"
+            android:textColor="@color/colorOne"
+            android:text="Allow access to the location" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="30dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:textAllCaps="false"
-                android:background="@drawable/button_background2"
-                android:textColor="@color/colorOne"
-                android:text="Deny" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="30dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:textAllCaps="false"
-                android:background="@drawable/button_background2"
-                android:textColor="@color/colorOne"
-                android:text="Allow" />
-        </LinearLayout>
 
 
     </LinearLayout>
