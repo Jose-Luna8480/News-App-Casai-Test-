@@ -1,11 +1,12 @@
 package com.example.logginscreen.adapter.viewholder
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.logginscreen.ListNews
 import com.example.logginscreen.R
 import com.example.logginscreen.`interface`.ItemClickListener
 import com.example.logginscreen.model.WebSite
@@ -26,7 +27,9 @@ class ListSourceAdapter(private val context: Context, private val webSite: WebSi
 
         holder.setItemClickListener(object :ItemClickListener{
             override fun onClick(view: View, position: Int) {
-                Toast.makeText(context, "Next tutorial", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context,ListNews::class.java)
+                intent.putExtra("Source",webSite.sources!![position].id)
+                context.startActivity(intent)
             }
         })
     }
